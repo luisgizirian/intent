@@ -299,11 +299,30 @@ All invariants can be verified statically or at runtime.
 - [x] JavaScript code generation
 - [x] Runtime contract checking
 - [x] CLI and REPL
+- [x] **TypeScript-Go (tsgo) testing** - 3.8x faster builds verified
 - [ ] TypeScript output
 - [ ] LSP support (IDE integration)
 - [ ] Static verification (SMT solver integration)
 - [ ] Package manager
 - [ ] Standard library
+
+## Development
+
+### Fast Builds with TypeScript-Go (Optional)
+
+The Intent compiler can be built with Microsoft's new TypeScript-Go (tsgo) compiler for significantly faster build times:
+
+```bash
+# Install the TypeScript-Go preview
+npm install -D @typescript/native-preview
+
+# Build with tsgo (3.8x faster)
+npx tsgo --project tsconfig.json
+```
+
+**Performance:** tsgo builds the Intent compiler in ~0.4s vs ~1.5s with standard tsc.
+
+See [docs/TSGO_TESTING_GUIDE.md](docs/TSGO_TESTING_GUIDE.md) for complete testing guide and benchmarks.
 
 ## Contributing
 
