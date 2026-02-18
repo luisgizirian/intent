@@ -9,6 +9,7 @@
   },
   "scripts": {
     "build": "tsc",
+    "build:fast": "tsgo --project tsconfig.json",
     "watch": "tsc --watch",
     "clean": "rm -rf dist",
     "test": "node --test dist/**/*.test.js",
@@ -38,6 +39,7 @@
   },
   "devDependencies": {
     "@types/node": "^20.0.0",
+    "@typescript/native-preview": "^7.0.0-dev.20260218.1",
     "typescript": "^5.3.0"
   },
   "files": [
