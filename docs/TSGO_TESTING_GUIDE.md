@@ -10,6 +10,22 @@ This guide documents the testing and integration of Microsoft's TypeScript-Go (t
 
 **Key Finding:** The tsgo compiler provides approximately **3.8x faster build times** for the Intent compiler compared to the standard TypeScript compiler (tsc).
 
+## Quick Start
+
+For Intent compiler developers, tsgo is already set up and ready to use:
+
+```bash
+# Clone and install
+git clone https://github.com/luisgizirian/compiler.git
+cd compiler
+npm install
+
+# Use the fast build script
+npm run build:fast
+```
+
+That's it! The `@typescript/native-preview` package is already included in devDependencies.
+
 ## What is TypeScript-Go (tsgo)?
 
 TypeScript-Go, also known as **TypeScript 7 Native Preview** or **Project Corsa**, is Microsoft's official rewrite of the TypeScript compiler in the Go programming language. It's part of the TypeScript 7.0 roadmap.
@@ -134,16 +150,15 @@ npm run build
 - ✅ No changes to package.json or CI
 - ✅ Fall back to tsc if issues arise
 
-### Option 2: Add tsgo as Alternative Build Script
+### Option 2: Add tsgo as Alternative Build Script ✅ IMPLEMENTED
 
-Add a new script to `package.json`:
+The Intent compiler now includes a `build:fast` script in `package.json`:
 
 ```json
 {
   "scripts": {
     "build": "tsc",
-    "build:fast": "tsgo --project tsconfig.json",
-    "build:tsgo": "tsgo --project tsconfig.json"
+    "build:fast": "tsgo --project tsconfig.json"
   }
 }
 ```
@@ -152,6 +167,8 @@ Usage:
 ```bash
 npm run build:fast
 ```
+
+**This option is now active in the Intent compiler repository.**
 
 ### Option 3: Replace tsc with tsgo (Future)
 

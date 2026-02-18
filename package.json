@@ -9,6 +9,7 @@
   },
   "scripts": {
     "build": "tsc",
+    "build:fast": "tsgo --project tsconfig.json",
     "watch": "tsc --watch",
     "clean": "rm -rf dist",
     "test": "node --test dist/**/*.test.js",

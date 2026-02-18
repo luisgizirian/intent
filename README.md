@@ -31,8 +31,11 @@ cd compiler
 # Install dependencies
 npm install
 
-# Build the compiler
+# Build the compiler (standard)
 npm run build
+
+# Build the compiler (fast with tsgo - 3.8x faster)
+npm run build:fast
 
 # Run an example
 npm run example
@@ -308,19 +311,21 @@ All invariants can be verified statically or at runtime.
 
 ## Development
 
-### Fast Builds with TypeScript-Go (Optional)
+### Fast Builds with TypeScript-Go
 
-The Intent compiler can be built with Microsoft's new TypeScript-Go (tsgo) compiler for significantly faster build times:
+The Intent compiler includes support for Microsoft's new TypeScript-Go (tsgo) compiler for significantly faster build times:
 
 ```bash
-# Install the TypeScript-Go preview
-npm install -D @typescript/native-preview
+# Standard build (uses tsc)
+npm run build
 
-# Build with tsgo (3.8x faster)
-npx tsgo --project tsconfig.json
+# Fast build (uses tsgo - 3.8x faster) 
+npm run build:fast
 ```
 
 **Performance:** tsgo builds the Intent compiler in ~0.4s vs ~1.5s with standard tsc.
+
+**Installation:** The `@typescript/native-preview` package is already included in `devDependencies`. Just run `npm install` and you're ready to use `npm run build:fast`.
 
 See [docs/TSGO_TESTING_GUIDE.md](docs/TSGO_TESTING_GUIDE.md) for complete testing guide and benchmarks.
 
