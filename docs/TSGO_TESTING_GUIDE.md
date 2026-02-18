@@ -1,7 +1,7 @@
 # TypeScript-Go (tsgo) Testing Guide
 
 **Date:** 2026-02-18  
-**Issue:** [Follow up on TypeScript-Go preview version for testing](https://github.com/luisgizirian/compiler/issues)  
+**Reference:** [GitHub Discussion #5](https://github.com/luisgizirian/compiler/discussions/5)  
 **Status:** ✅ TESTED - Working Successfully
 
 ## Executive Summary
@@ -306,7 +306,8 @@ npm install -g @typescript/native-preview
 ### Official Resources
 - **GitHub Repository:** https://github.com/microsoft/typescript-go
 - **npm Package:** https://www.npmjs.com/package/@typescript/native-preview
-- **Official Website:** https://typescriptgo.com/
+- **TypeScript-Go Info Site:** https://typescriptgo.com/ (Community resource, accessible as of 2026-02-18)
+- **Official TypeScript Website:** https://www.typescriptlang.org/
 - **Announcement Blog:** https://devblogs.microsoft.com/typescript/announcing-typescript-native-previews/
 
 ### Documentation
