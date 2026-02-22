@@ -1,0 +1,60 @@
+// Contracts Example in Intent
+// Demonstrates preconditions, postconditions, and struct invariants
+
+// A simple safe integer division with a contract
+fn divide(a: Int, b: Int) -> Int
+    @requires b != 0              // Precondition: divisor must not be zero
+    @ensures result * b == a      // Postcondition: division is correct
+{
+    return a / b
+}
+
+// Temperature must stay in a valid Celsius range
+struct Temperature {
+    celsius: Float64,
+
+    @invariant celsius >= -273.15  // Absolute zero — can't go lower
+}
+
+// Factory function with a contract to enforce valid input
+fn makeTemperature(celsius: Float64) -> Result<Temperature, String>
+    @requires celsius >= -273.15
+    @ensures match result {
+        Ok(temp) => temp.celsius == celsius,
+        Err(_) => false,
+    }
+{
+    return Ok(Temperature { celsius: celsius })
+}
+
+// Convert Celsius to Fahrenheit — pure: no side effects
+pure fn toFahrenheit(t: Temperature) -> Float64
+    @ensures result == t.celsius * 9.0 / 5.0 + 32.0
+{
+    return t.celsius * 9.0 / 5.0 + 32.0
+}
+
+// Add two temperatures and return the average
+pure fn average(a: Temperature, b: Temperature) -> Float64
+    @ensures result == (a.celsius + b.celsius) / 2.0
+{
+    return (a.celsius + b.celsius) / 2.0
+}
+
+fn main() -> Result<Void, String> @effect[IO] {
+    // Safe division
+    let result = divide(10, 2)
+    IO.write("10 / 2 = " + result.toString())
+
+    // Temperatures with invariant protection
+    let boiling = makeTemperature(100.0)?
+    let freezing = makeTemperature(0.0)?
+    let bodyTemp = makeTemperature(37.0)?
+
+    IO.write("Boiling point in Fahrenheit: " + toFahrenheit(boiling).toString())
+    IO.write("Freezing point in Fahrenheit: " + toFahrenheit(freezing).toString())
+    IO.write("Average of boiling and freezing: " + average(boiling, freezing).toString())
+    IO.write("Body temperature: " + bodyTemp.celsius.toString() + "°C")
+
+    return Ok(())
+}
