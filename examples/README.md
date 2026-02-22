@@ -31,15 +31,19 @@ Intent solves this by making meaning machine-verifiable. Every function carries 
 
 ---
 
-## Examples (Beginner → Advanced)
+## Examples: A Guided Exploration
 
-The examples below are ordered from simplest to most sophisticated. Start from the top if you are new to Intent; jump ahead if you already have some familiarity.
+Each example illuminates a specific set of concepts in Intent. They're designed to build on each other, so following the suggested path helps concepts compound naturally — but feel free to explore based on curiosity or need.
+
+**No hierarchies. No levels. Just ideas that build on each other.**
+
+> **A note on learning:** These examples aren't a ladder to climb. There's no "beginner" or "advanced" — only different concepts that become clearer when you've seen what came before. Our competitive instincts want to rush to the "hard stuff," but understanding comes from spending time with each idea. Take your time. Master the fundamentals. They're not stepping stones to skip over; they're the foundation everything else rests on.
 
 ---
 
-### 1. Hello World — [`hello.intent`](hello.intent)
+### 1. Effect System Basics — [`hello.intent`](hello.intent)
 
-**Level:** Beginner
+**Focus:** How Intent tracks side effects
 
 The simplest possible Intent program. It demonstrates:
 
@@ -63,11 +67,11 @@ fn main() -> Void @effect[IO] {
 
 ---
 
-### 2. Contracts — [`contracts.intent`](contracts.intent)
+### 2. Contracts & Invariants — [`contracts.intent`](contracts.intent)
 
-**Level:** Beginner–Intermediate
+**Focus:** Preconditions, postconditions, and type-level guarantees
 
-Introduces **preconditions**, **postconditions**, and **struct invariants** — the contract system at the heart of Intent.
+Introduces the contract system at the heart of Intent — how to make promises that the compiler can verify.
 
 Highlights:
 
@@ -95,11 +99,11 @@ struct Temperature {
 
 ---
 
-### 3. Pattern Matching — [`patterns.intent`](patterns.intent)
+### 3. Algebraic Types & Pattern Matching — [`patterns.intent`](patterns.intent)
 
-**Level:** Intermediate
+**Focus:** Modeling domains with precision and exhaustiveness
 
-Explores **algebraic data types** (enums), **pattern matching**, and **struct destructuring** — tools for modelling complex domains clearly and exhaustively.
+Explores algebraic data types (enums), pattern matching, and struct destructuring — tools that make illegal states unrepresentable.
 
 Highlights:
 
@@ -132,11 +136,11 @@ pure fn area(shape: Shape) -> Float64
 
 ---
 
-### 4. Banking System — [`banking.intent`](banking.intent)
+### 4. Composing Concepts: A Banking System — [`banking.intent`](banking.intent)
 
-**Level:** Intermediate–Advanced
+**Focus:** How multiple Intent features work together in realistic code
 
-A real-world scenario that combines **multiple effects**, **struct invariants**, **named contracts**, and **intent blocks** to model a correct-by-construction banking transfer.
+A real-world scenario that demonstrates how effects, invariants, named contracts, and intent blocks combine to create correct-by-construction systems.
 
 Highlights:
 
@@ -171,11 +175,11 @@ fn transfer(from: mut Account, to: mut Account, amount: Float64)
 
 ---
 
-### 5. Sorting & Verification — [`sorting.intent`](sorting.intent)
+### 5. Verification in Practice — [`sorting.intent`](sorting.intent)
 
-**Level:** Advanced
+**Focus:** Specifying and verifying algorithmic properties
 
-Demonstrates **intent blocks**, **loop invariants**, and **formal verification** properties for classic algorithms: bubble sort, binary search, and quicksort.
+Demonstrates formal specifications using intent blocks, loop invariants, and verification properties for classic algorithms.
 
 Highlights:
 
@@ -203,9 +207,9 @@ pure fn bubbleSort<T: Ord>(input: [T]) -> [T]
 
 ### 6. Capability-Based Security — [`capabilities.intent`](capabilities.intent)
 
-**Level:** Advanced
+**Focus:** Fine-grained permission control at the language level
 
-Shows how Intent's **capability system** enables fine-grained, declaration-first security. Functions explicitly request only the permissions they need — and the system enforces it.
+Shows how Intent's capability system makes security explicit and auditable — functions declare exactly what they can access, and the compiler enforces it.
 
 Highlights:
 
@@ -240,26 +244,30 @@ fn processSandboxed(data: String) -> String
 
 ---
 
-## Learning Path
+## Suggested Exploration Path
+
+Each example builds on concepts from earlier ones, so this order helps ideas compound naturally:
 
 ```
-hello.intent          ← Start here (effects)
+hello.intent          ← Effect system foundation
      │
      ▼
-contracts.intent      ← Contracts, invariants, pure functions
+contracts.intent      ← Adding correctness guarantees  
      │
      ▼
-patterns.intent       ← Algebraic types, pattern matching
+patterns.intent       ← Precise domain modeling
      │
      ▼
-banking.intent        ← Named contracts, intent blocks, effects
+banking.intent        ← Seeing how concepts compose
      │
      ▼
-sorting.intent        ← Verification, forall, loop invariants
+sorting.intent        ← Formal verification properties
      │
      ▼
-capabilities.intent   ← Capability-based security
+capabilities.intent   ← Security through declarations
 ```
+
+**But remember:** These aren't levels to climb. If you're curious about capabilities or verification, jump there directly. You can always circle back when you encounter an unfamiliar concept.
 
 ---
 
