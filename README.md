@@ -2,7 +2,7 @@
 
 # Intent Programming Language
 
-**Intent** is a programming language designed for the LLM era, focusing on **machine-verifiable intent**, **semantic clarity**, and **long-lived system preservation**.
+**Intent** is a programming language **designed for the LLM era**, focusing on **machine-verifiable intent**, **semantic clarity**, and **long-lived system preservation**.
 
 > *"LLMs make it easier to write code, but harder to keep systems correct — and languages exist to solve the latter."*
 
