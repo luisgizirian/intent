@@ -1,6 +1,6 @@
 > **Disclaimer:** The project is based on a sample lesson I asked GH Copilot to put together on writing a compiler for a simple language now in the LLM era. It's not intended to be a usable or even complete project. It's more on the realms of becoming a learning journey throughout the intricacies of compiler programming and building. Many unknowns yet.
 
-### Oher efforts on a similar page and with a bigger community behind
+### Oher efforts on a similar page and with bigger community behind
 - https://github.com/modular/modular
 
 # Intent Programming Language
