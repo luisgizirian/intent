@@ -28,8 +28,8 @@ Intent provides those rails through:
 
 ```bash
 # Clone the repository
-git clone https://github.com/luisgizirian/compiler.git
-cd compiler
+git clone https://github.com/luisgizirian/intent.git
+cd intent
 
 # Install dependencies
 npm install
@@ -240,7 +240,7 @@ fn(Int) -> Int         // Function type
 ## Project Structure
 
 ```
-compiler/
+intent/
 ├── src/
 │   ├── index.ts        # Main compiler API
 │   ├── cli.ts          # Command-line interface

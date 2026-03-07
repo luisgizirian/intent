@@ -1,7 +1,7 @@
 # TypeScript-Go Foundation Exploration
 
 **Date:** 2026-02-08 (Updated)  
-**Issue:** [Explore using typescript-go instead for its foundation](https://github.com/luisgizirian/compiler/issues)  
+**Issue:** [Explore using typescript-go instead for its foundation](https://github.com/luisgizirian/intent/issues)  
 **Status:** Investigation Complete - REASSESSED
 
 ## Executive Summary
@@ -282,7 +282,7 @@ npm install -D @typescript/native-preview
 - Issue: Explore using typescript-go instead for its foundation
 - URL Tested: https://typescriptgo.com/ ✅ **ACCESSIBLE** (as of 2026-02-08 afternoon)
 - Current Tech Stack: TypeScript 5.3.0, Node.js >= 18.0.0
-- Repository: https://github.com/luisgizirian/compiler
+- Repository: https://github.com/luisgizirian/intent
 - Microsoft Blog: "A 10x Faster TypeScript" (devblogs.microsoft.com)
 - TypeScript 7 Preview: `@typescript/native-preview` on npm
 - Official Benchmarks: VSCode (10.2x), Sentry (8.19x), TypeORM (9.88x)
