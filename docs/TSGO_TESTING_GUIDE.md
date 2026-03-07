@@ -1,7 +1,7 @@
 # TypeScript-Go (tsgo) Testing Guide
 
 **Date:** 2026-02-18  
-**Reference:** [GitHub Discussion #5](https://github.com/luisgizirian/compiler/discussions/5)  
+**Reference:** [GitHub Discussion #5](https://github.com/luisgizirian/intent/discussions/5)  
 **Status:** ✅ TESTED - Working Successfully
 
 ## Executive Summary
@@ -16,8 +16,8 @@ For Intent compiler developers, tsgo is already set up and ready to use:
 
 ```bash
 # Clone and install
-git clone https://github.com/luisgizirian/compiler.git
-cd compiler
+git clone https://github.com/luisgizirian/intent.git
+cd intent
 npm install
 
 # Use the fast build script
